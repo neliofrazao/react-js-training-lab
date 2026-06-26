@@ -199,6 +199,109 @@ rick-and-morty-app/
 
 ---
 
+## 🎨 Configurando o Bootstrap (opcional)
+
+O Bootstrap pode ser integrado ao projeto Vite + React para acelerar o layout com componentes prontos (grid, botões, cards, navbar, etc.).
+
+Documentação oficial: [Bootstrap and Vite](https://getbootstrap.com/docs/5.3/getting-started/vite/)
+
+### 1. Instalar as dependências
+
+```bash
+npm install bootstrap @popperjs/core
+npm install --save-dev sass
+```
+
+> O `@popperjs/core` é necessário para dropdowns, popovers e tooltips. Se você não for usar esses componentes, pode omitir essa dependência.
+
+### 2. Criar o arquivo de estilos
+
+Crie o arquivo `src/scss/styles.scss` com o import do Bootstrap:
+
+```scss
+@import "bootstrap/scss/bootstrap";
+```
+
+### 3. Importar no ponto de entrada da aplicação
+
+Em `src/main.jsx`, importe o CSS e, se precisar dos plugins JavaScript do Bootstrap (modal, dropdown, etc.), importe o JS também:
+
+```js
+import './scss/styles.scss'
+import * as bootstrap from 'bootstrap'
+```
+
+> Para reduzir o tamanho do bundle, você pode importar apenas os plugins que for usar — veja a [documentação de JavaScript do Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/javascript/).
+
+### 4. Usar classes do Bootstrap nos componentes
+
+```jsx
+<div className="container py-4">
+  <h1 className="display-4">Rick and Morty App</h1>
+  <button className="btn btn-primary">Pesquisar</button>
+</div>
+```
+
+---
+
+## 🌬️ Configurando o Tailwind CSS (opcional)
+
+O Tailwind CSS oferece classes utilitárias para estilizar a interface diretamente no JSX, sem precisar escrever CSS separado para cada elemento.
+
+Documentação oficial: [Installing Tailwind CSS with Vite](https://tailwindcss.com/docs/installation/using-vite)
+
+### 1. Instalar as dependências
+
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+### 2. Configurar o plugin no Vite
+
+Edite o arquivo `vite.config.js` na raiz do projeto:
+
+```js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+})
+```
+
+### 3. Importar o Tailwind no CSS
+
+No arquivo `src/index.css` (ou crie um `src/style.css`), adicione:
+
+```css
+@import "tailwindcss";
+```
+
+Certifique-se de que esse arquivo está importado em `src/main.jsx`:
+
+```js
+import './index.css'
+```
+
+### 4. Usar classes do Tailwind nos componentes
+
+```jsx
+<div className="container mx-auto py-8 px-4">
+  <h1 className="text-3xl font-bold text-green-500">Rick and Morty App</h1>
+  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+    Pesquisar
+  </button>
+</div>
+```
+
+> Você pode usar **Bootstrap** ou **Tailwind CSS** — escolha um dos dois para manter o projeto organizado. Nenhum dos dois é obrigatório para o desafio.
+
+---
+
 ## 📊 Critérios de avaliação
 
 A nota final é de **0 a 10** e é composta pelos critérios abaixo.
@@ -268,6 +371,8 @@ Link do repositório:
 | React Router | [reactrouter.com/docs](https://reactrouter.com/docs) |
 | JavaScript moderno | [javascript.info](https://javascript.info) |
 | Rick and Morty API | [rickandmortyapi.com/documentation](https://rickandmortyapi.com/documentation) |
+| Bootstrap + Vite | [getbootstrap.com/docs/5.3/getting-started/vite](https://getbootstrap.com/docs/5.3/getting-started/vite/) |
+| Tailwind CSS + Vite | [tailwindcss.com/docs/installation/using-vite](https://tailwindcss.com/docs/installation/using-vite) |
 | Deploy gratuito | [vercel.com](https://vercel.com) / [netlify.com](https://netlify.com) |
 
 ---
