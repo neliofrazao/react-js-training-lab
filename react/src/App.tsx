@@ -1,6 +1,6 @@
 function App() {
   return (
-    <p>opa</p>
+    <p>JavaScript & React</p>
   )
 }
 
