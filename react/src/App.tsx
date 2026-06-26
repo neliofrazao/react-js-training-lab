@@ -1,6 +1,8 @@
 function App() {
   return (
-    <p>JavaScript & React</p>
+    <p className="text-2xl font-bold0 text-center p-8">
+      JavaScript & React
+    </p>
   )
 }
 
