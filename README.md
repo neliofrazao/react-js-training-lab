@@ -29,7 +29,6 @@ A disciplina apresenta os fundamentos do desenvolvimento web moderno com foco em
 | | |
 |---|---|
 | **Duração** | 2 finais de semana presenciais |
-| **Carga horária** | ~13h (6h30 por dia) |
 | **Projeto central** | CRUD de Disciplinas + CRUD de Alunos |
 
 ---
