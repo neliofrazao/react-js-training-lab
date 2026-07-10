@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documento html</title>
+    <script>
+      // let nome = "João";
+      // const idade = 20;
+      // var email = "joao@gmail.com";
+      // console.log("Olá, mundo!");
+      // console.error("Error");
+      // console.warn("Warning");
+      // console.info("Info"); 
+      // console.debug("Debug");
+      // {
+      //   let nome = "maria";
+      //   email = 'asd'
+      // }
+
+      // console.info(nome);
+      // console.log(email)
+    </script>
+  </head>
+  <body>
+    <!-- <script>
+      // window.confirm("Olá, mundo do window!");
+      // window.alert("Olá, mundo do window!");
+      // window.prompt("Olá, mundo do window!");
+      // console.log("Olá, mundo do body!");
+      
+    </script> -->
+    <div style="display: flex; flex-direction: column; width: 200px; gap: 10px;">
+      <label for="disciplina">Nova disciplinas</label>
+      <input type="text" id="disciplina" />
+      <button id="cadastras">Nova disciplina</button>
+    </div>
+    <ul id="lista">
+      <!-- <li>Lista nao ordenada</li> -->
+    </ul>
+    <ol id="lista-ordenada">
+      <li>Lista ordenada</li>
+      <li>Lista ordenada</li>
+      <li>Lista ordenada</li>
+    </ol>
+    <script>
+      const textIput = document.getElementById('disciplina')
+      const btnAdd = document.getElementById('cadastras') 
+      const list = document.getElementById('lista')
+ 
+      
+      btnAdd.addEventListener('click', function() {
+        const text =  textIput.value
+        list.innerHTML += '<li>' + text + '</li>'
+        list.innerHTML = `<li>${text}</li>`
+        // textIput.getAttribute('value' , '')
+        // console.log('text', text)
+      })
+
+      console.log(textIput)
+
+      
+
+      console.log('textIput', textIput)
+    </script>
+  </body>
+</html>
