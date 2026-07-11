@@ -13,8 +13,8 @@ const obj = {
 }
            //0     1    2               3
 const arr = ['a', true, () => {'opa'}, ['a', 'b', 'c']]
-const nossoUseState = ['valor 1', function set() { return 'param1' }]
-const [get, setState] = nossoUseState
+// const nossoUseState = ['valor 1', function set() { return 'param1' }]
+// const [get, setState] = nossoUseState
 
 // console.log('nossoUseState', get)
 // console.log('nossoUseState', setState)
@@ -43,11 +43,11 @@ const frameworks = [
   { nome: "Angular", ano: 2016 },
 ]
 
-const ordenacao = () => frameworks.sort((a, b) => { 
-  console.log('a', `${a.nome}-${a.ano}`)
-  console.log('b', `${b.nome}-${b.ano}`)
-  return a.ano - b.ano} 
-)
+// const ordenacao = () => frameworks.sort((a, b) => { 
+//   console.log('a', `${a.nome}-${a.ano}`)
+//   console.log('b', `${b.nome}-${b.ano}`)
+//   return a.ano - b.ano} 
+// )
 
 // console.log(ordenacao())
 
@@ -122,51 +122,53 @@ console.log('turma', turma)
 // - [ ] Adicionar item à lista com spread: `[...lista, novoItem]`
 // DESAFIO 08 — CRUD de Disciplinas
 
-import { useState } from "react";
-import { Card  } from "./components/card"
+// import { useState } from "react";
+// import { Card  } from "./components/card"
+import { CardCursos } from "./components/card-cursos"
 
 function App() {
   //     get          set                     Valor default
-  const [disciplina, setDisciplina] = useState("");
-  const [lista, setLista] = useState([]);
-  function saveList() {
-    setLista([...lista, disciplina])
-    setDisciplina('')
-  }
+  // const [disciplina, setDisciplina] = useState("");
+  // const [lista, setLista] = useState([]);
+  // function saveList() {
+  //   setLista([...lista, disciplina])
+  //   setDisciplina('')
+  // }
   // const texto = "opa";
   // const tipo = typeof texto;
   // console.log(texto);
   // console.log(tipo);
 
   return (
-    <div className="max-w-md max-auto p-6 flex flex-col gap-2">
-      <input
-        type="text"
-        placeholder="Digite o nome da disciplina"
-        className="border p-2"
-        value={disciplina}
-        // addEventListener
-        onChange={function handleChange(event) {
-          return setDisciplina(event.target.value);
-        }}
-      />
-      <button
-        className="bg-amber-300 p-2"
-        // addevent
-        onClick={saveList}
-      >
-        Salvar
-      </button>
-      <div>
-        <Card item='item' status='inativo'/>
-        {/* <ul>
-          {
-            // if(lista.length > 0)
-            lista.map((item, index) => <li key={index}>{item}</li>)
-          }
-        </ul> */}
-      </div>
-    </div>
+    <CardCursos />
+    // <div className="max-w-md max-auto p-6 flex flex-col gap-2">
+    //   <input
+    //     type="text"
+    //     placeholder="Digite o nome da disciplina"
+    //     className="border p-2"
+    //     value={disciplina}
+    //     // addEventListener
+    //     onChange={function handleChange(event) {
+    //       return setDisciplina(event.target.value);
+    //     }}
+    //   />
+    //   <button
+    //     className="bg-amber-300 p-2"
+    //     // addevent
+    //     onClick={saveList}
+    //   >
+    //     Salvar
+    //   </button>
+    //   <div>
+    //     <Card item='item' status='inativo'/>
+    //     {/* <ul>
+    //       {
+    //         // if(lista.length > 0)
+    //         lista.map((item, index) => <li key={index}>{item}</li>)
+    //       }
+    //     </ul> */}
+    //   </div>
+    // </div>
   );
 }
 
