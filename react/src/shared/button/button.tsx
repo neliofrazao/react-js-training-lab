@@ -16,5 +16,5 @@ const buttonColor = (variant: variant) => {
   };
   
 export function Button({ buttonLabel, handleClick, variant = "neutro" }: ButtonType) {
-  return <button onClick={handleClick} className={`${buttonColor(variant)} text-white`}>{buttonLabel}</button>;
+  return <button onClick={handleClick} className={`${buttonColor(variant)} text-white p-3`}>{buttonLabel}</button>;
 }

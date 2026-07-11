@@ -12,7 +12,17 @@ export function CardCursos() {
     setInputValue("");
   };
 
-  console.log(cursos);
+  const valoresFiltrados = cursos.filter((curso) => {
+    return curso.toLocaleLowerCase().includes(busca.toLocaleLowerCase());
+  });
+
+  const handleDelete = (index: number) => {
+    const cursosApagados = cursos.filter((_, i) => i !== index)
+    console.log('cursosApagados', cursosApagados)
+    return setCursos(cursosApagados) ;
+  };
+
+  console.log("valoresFiltrados", valoresFiltrados);
   return (
     // exemplo do React Fragment
     <>
@@ -40,18 +50,20 @@ export function CardCursos() {
         </div>
         <div className="p-6 flex flex-col gap-2 border-2 flex-initial">
           <h2 className="text-gray-600">Lista de cursos</h2>
-          {cursos.length > 0 ? (
+          {valoresFiltrados.length > 0 ? (
             <>
-              <ul>
-                {cursos.map((curso) => (
-                  <li className="text-cyan-500 border-2 p-2">{curso}</li>
+              <ul className="flex flex-col gap-2">
+                {valoresFiltrados.map((curso, index) => (
+                  <div className="flex flex-row gap-2 p-3">
+                    <li className="text-cyan-500 border-2 p-2">{curso}</li>
+                    <Button
+                      handleClick={() => handleDelete(index)}
+                      buttonLabel="Excluir"
+                      variant="error"
+                    />
+                  </div>
                 ))}
               </ul>
-              <Button
-                handleClick={() => console.log("opa-epa")}
-                buttonLabel="Excluir"
-                variant="error"
-              />
             </>
           ) : (
             <p className="text-red-700">Nenhum Curso Encontrado</p>
