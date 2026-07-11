@@ -100,6 +100,7 @@ const turma = {
 console.log('turma', turma)
 
 
+import { useEffect } from "react"
 // Condicionais if e else
 // falsos no JS: false, 0, null, undefined, NaN, ''
 // Condicionais ternárias
@@ -139,6 +140,10 @@ function App() {
   // console.log(texto);
   // console.log(tipo);
 
+  useEffect(() => {
+   console.log('montei') 
+  }, [])
+  
   return (
     <CardCursos />
     // <div className="max-w-md max-auto p-6 flex flex-col gap-2">

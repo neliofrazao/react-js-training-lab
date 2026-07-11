@@ -1,0 +1,13 @@
+{
+  "cursos": [
+    {
+      "id": "2",
+      "name": "Pisocologia"
+    },
+    {
+      "name": "JavaScipt",
+      "id": "9POqdB2RS8g"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
