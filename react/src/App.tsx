@@ -123,6 +123,7 @@ console.log('turma', turma)
 // DESAFIO 08 — CRUD de Disciplinas
 
 import { useState } from "react";
+import { Card  } from "./components/card"
 
 function App() {
   //     get          set                     Valor default
@@ -157,12 +158,13 @@ function App() {
         Salvar
       </button>
       <div>
-        <ul>
+        <Card item='item' status='inativo'/>
+        {/* <ul>
           {
             // if(lista.length > 0)
             lista.map((item, index) => <li key={index}>{item}</li>)
           }
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
